@@ -41,7 +41,9 @@ export default function BottomTabNavigator() {
 				component={TabProfileNavigator}
 				options={{
 					headerShown: false,
-					tabBarIcon: ({ color }) => <TabBarIcon name="person-circle-outline" color={color} />,
+					tabBarIcon: ({ color }) => (
+						<TabBarIcon name="person-circle-outline" color={color} />
+					),
 				}}
 			/>
 		</BottomTab.Navigator>
@@ -64,7 +66,7 @@ function TabHomeNavigator() {
 			<TabHomeStack.Screen
 				name="TabHomeScreen"
 				component={TabHomeScreen}
-				options={{ headerTitle: "Tab One Title" }}
+				options={{ headerTitle: "Home" }}
 			/>
 		</TabHomeStack.Navigator>
 	);
@@ -78,7 +80,7 @@ function TabSearchNavigator() {
 			<TabSearchStack.Screen
 				name="TabSearchScreen"
 				component={TabSearchScreen}
-				options={{ headerTitle: "Tab Two Title" }}
+				options={{ headerTitle: "Search" }}
 			/>
 		</TabSearchStack.Navigator>
 	);
@@ -92,7 +94,7 @@ function TabProfileNavigator() {
 			<TabProfileStack.Screen
 				name="TabProfileScreen"
 				component={TabProfileScreen}
-				options={{ headerTitle: "Tab Three Title" }}
+				options={{ headerTitle: "Profile" }}
 			/>
 		</TabProfileStack.Navigator>
 	);

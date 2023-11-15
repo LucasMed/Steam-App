@@ -1,18 +1,19 @@
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
+import { Text, View } from "../../components/Themed";
 
-export default function Profile() {
+export default function Game() {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.title}>Tab Three</Text>
+			<Text style={styles.title}>Tab One</Text>
 			<View
 				style={styles.separator}
 				lightColor="#eee"
 				darkColor="rgba(255,255,255,0.1)"
 			/>
-			<EditScreenInfo path="/screens/Profile.js" />
+      <Text>FriendData</Text>
+      <Text>Reviews</Text>
+      <Text>ReviewsCard</Text>
 		</View>
 	);
 }
