@@ -1,9 +1,8 @@
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
+import { Text, View } from "../../components/Themed";
 
-export default function Home() {
+export default function PostReviewCard() {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Tab One</Text>
@@ -12,7 +11,10 @@ export default function Home() {
 				lightColor="#eee"
 				darkColor="rgba(255,255,255,0.1)"
 			/>
-			<EditScreenInfo path="/screens/Home.js" />
+      <Text>Image-Username</Text>
+      <Text>Recommended-Thumbs Down-Thumbs Up</Text>
+      <Text>Text Input</Text>
+      <Text>Post Button</Text>
 		</View>
 	);
 }
