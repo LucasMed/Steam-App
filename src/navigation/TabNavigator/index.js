@@ -2,13 +2,14 @@
 // https://reactnavigation.org/docs/bottom-tab-navigator
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
+
 import { useColorScheme } from "react-native";
 
-import Colors from "../constants/Colors";
-import TabHomeScreen from "../screens/Home";
-import TabSearchScreen from "../screens/Search";
-import TabProfileScreen from "../screens/Profile";
+import Colors from "../../constants/Colors";
+
+import TabHomeNavigator from "./Tabs/Home";
+import TabSearchNavigator from "./Tabs/Search";
+import TabProfileNavigator from "./Tabs/Profile";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -17,7 +18,7 @@ export default function BottomTabNavigator() {
 
 	return (
 		<BottomTab.Navigator
-			initialRouteName="TabOne"
+			initialRouteName="TabHomeScreen"
 			screenOptions={{ tabBarActiveTintColor: Colors[colorScheme].tint }}
 		>
 			<BottomTab.Screen
@@ -54,48 +55,4 @@ export default function BottomTabNavigator() {
 // https://icons.expo.fyi/
 function TabBarIcon(props) {
 	return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
-
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabHomeStack = createStackNavigator();
-
-function TabHomeNavigator() {
-	return (
-		<TabHomeStack.Navigator>
-			<TabHomeStack.Screen
-				name="TabHomeScreen"
-				component={TabHomeScreen}
-				options={{ headerTitle: "Home" }}
-			/>
-		</TabHomeStack.Navigator>
-	);
-}
-
-const TabSearchStack = createStackNavigator();
-
-function TabSearchNavigator() {
-	return (
-		<TabSearchStack.Navigator>
-			<TabSearchStack.Screen
-				name="TabSearchScreen"
-				component={TabSearchScreen}
-				options={{ headerTitle: "Search" }}
-			/>
-		</TabSearchStack.Navigator>
-	);
-}
-
-const TabProfileStack = createStackNavigator();
-
-function TabProfileNavigator() {
-	return (
-		<TabProfileStack.Navigator>
-			<TabProfileStack.Screen
-				name="TabProfileScreen"
-				component={TabProfileScreen}
-				options={{ headerTitle: "Profile" }}
-			/>
-		</TabProfileStack.Navigator>
-	);
 }
